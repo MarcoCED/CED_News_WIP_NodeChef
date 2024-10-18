@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Federal Reserve News</title>
+    <link rel="stylesheet" href="../styles/us.css"> <!-- Shared styles -->
+    <link rel="stylesheet" href="../styles/us_fed_monpol.css"> <!-- Fed-specific styles -->
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul class="Menulist">
+            <li style="--bg:#ffa117;">
+                <a href="index.html">
+                    <div class="icon">
+                        <svg class="menu-icon">
+                            <use xlink:href="../icons/home.svg"></use> <!-- Home icon -->
+                        </svg>
+                    </div>
+                    <div class="text">Home</div>
+                </a>
+            </li>
+            <li style="--bg:#0fc70f;">
+                <a href="chart.html">
+                    <div class="icon">
+                        <svg class="menu-icon">
+                            <use xlink:href="../icons/chart.svg"></use> <!-- Chart icon -->
+                        </svg>
+                    </div>
+                    <div class="text">Chart</div>
+                </a>
+            </li>
+            <li style="--bg:#f44336;">
+                <a href="calendar.html">
+                    <div class="icon">
+                        <svg class="menu-icon">
+                            <use xlink:href="../icons/calendar.svg"></use> <!-- Calendar icon -->
+                        </svg>
+                    </div>
+                    <div class="text">Calendar</div>
+                </a>
+            </li>
+            <li style="--bg:#b145e9;">
+                <a href="glossary.html">
+                    <div class="icon">
+                        <svg class="menu-icon">
+                            <use xlink:href="../icons/glossary.svg"></use> <!-- Glossary icon -->
+                        </svg>
+                    </div>
+                    <div class="text">Glossary</div>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="logo-text-container">
+            <div class="logo-container">
+                <svg id="text" width="44.2911" height="45.6148" viewBox="-5 -5 80.303 82.404" xmlns="http://www.w3.org/2000/svg">
+                    <g id="svgGroup" stroke-linecap="round" fill-rule="nonzero" font-size="9pt" stroke="#67809F" stroke-width="0.25mm" fill="#67809F">
+                        <rect id="bar1" x="12" y="13" width="45" height="12" fill="red" rx="3" ry="3" />
+                        <rect id="bar2" x="12" y="30" width="27.5" height="14" fill="gold" rx="3" ry="3"/>
+                        <rect id="bar3" x="12" y="49" width="37.5" height="12" fill="green" rx="3" ry="3"/>
+                    </g>        
+                </svg>
+                <div class="logo-text">US Federal Reserve News</div>
+            </div>
+        </div>
+
+        <!-- Dropdown Menus -->
+        <div class="header-menu-container">
+            <div class="dropdown">
+                <span class="dropdown-button">Economics</span>
+                <ul class="dropdown-list">
+                    <li><a href="#">Indicators</a>
+                        <ul class="sub-list">
+                            <li><a href="us_labor_market.html">Labor Market</a></li>
+                            <li><a href="us_inflation.html">Inflation</a></li>
+                            <li><a href="us_real_economy.html">Real Economy</a></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Logistics</a>
+                        <ul class="sub-list">
+                            <li><a href="#">Sea Freight</a></li>
+                            <li><a href="#">Air Cargo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Analysis</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-button">Fed</span>
+                <ul class="dropdown-list">
+                    <li><a href="us_fed.html">Monetary Policy</a></li>
+                    <li><a href="us_fed_speeches.html">Speeches</a></li>
+                    <li><a href="#">Regional Fed</a></li>
+                    <li><a href="us_fed_research.html">Research</a></li>
+                   </ul>
+            </div>
+            <div class="dropdown">
+                <span class="dropdown-button">Commodities</span>
+                <ul class="dropdown-list">
+                    <li><a href="#">Energy</a>
+                        <ul class="sub-list">
+                            <li><a href="#">Oil</a></li>
+                            <li><a href="#">Coal</a></li>
+                            <li><a href="#">Solar</a></li>
+                            <li><a href="#">Renewable</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Metals</a>
+                        <ul class="sub-list">
+                            <li><a href="#">Precious</a></li>
+                            <li><a href="#">Non-Ferrous</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Softs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Clock and Search Bar -->
+        <div class="clock-search-container">
+            <div class="clock-search-wrapper">
+                <div class="clock-container">
+                    <img id="user-location-flag" src="../icons/flag-usa.svg" alt="Flag" class="flag-icon">
+                    <span id="clock"></span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001a1 1 0 0 0 .195.195l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.195-.195zm-5.442-3.34a5 5 0 1 1 0-7.071 5 5 0 0 1 0 7.07z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="site-content">
+        <section class="news-container">
+          <div id="fed-policy-feed-container"></div><!-- Feed will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <script src="../scripts/us.js"></script> <!-- Shared JS -->
+    <script src="../newsfeeds/fed/us_fed_policy.js"></script> <!-- Fed-specific JS -->
+
+
+    <!-- Initialize the feed -->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetchFedPolicyFeeds('fed-policy-feed-container'); // Match this with the container ID in the HTML
+    });
+</script>
+
+
+</body>
+</html>

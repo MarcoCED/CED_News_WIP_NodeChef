@@ -1,0 +1,112 @@
+/* Import the Roboto Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* General container styling */
+.news-item {
+    margin-bottom: 1px;
+    position: relative;
+    padding: 0;
+    overflow: visible; /* Ensure hover content is not cut off */
+}
+
+/* Headline styling */
+.news-item h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    line-height: 1.1;
+    letter-spacing: -1.75px;
+}
+
+/* Badge Styling for Different Feds */
+.fed-label {
+    font-weight: bold;
+    color: white;
+    padding: 2px 6px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.bos-fed-box {
+    background-color: #007A33; /* Boston Fed Blue */
+}
+
+.atl-fed-box {
+    background-color: #0033A0; /* Atlanta Fed Blue */
+}
+
+.ric-fed-box {
+    background-color: #007EA7; /* Richmond Fed Blue */
+}
+
+
+.dal-fed-box {
+   background-color: #0066CC; /* Dallas Fed Blue */
+}
+
+
+/* Content Box */
+.news-item .news-content {
+    background-color: #2f4f6f;
+    padding: 10px;
+    border-left: 4px solid #ffc107;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    width: 750px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover over the news-item container, and keep the text box open */
+.news-item:hover .news-content,
+.news-item .news-content:hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hide paragraphs initially */
+.news-item p {
+    display: none;
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Read More link styling */
+.news-content a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
+
+/* Show paragraph with a smoother transition */
+.news-item:hover p {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Adjust spacing and responsiveness */
+.news-item-title {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95em;
+    text-transform: capitalize;
+    letter-spacing: -1.75px;
+    margin-bottom: 1px; /* Keep headlines close together */
+}

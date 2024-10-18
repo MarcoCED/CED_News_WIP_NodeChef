@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;0,900&display=swap");
+
+:root {
+    --sidebar-width: 150px;
+    --sidebar-bg: #2C3E50;
+    --sidebar-text: #ECF0F1;
+    --header-bg: #2C3E50;
+    --header-text: #ECF0F1;
+    --dropdown-bg: #34495E;
+    --dropdown-text-color: #ECF0F1;
+    --highlight-blue: #3498DB;
+    --text-color: #ECF0F1;
+    --header-font-size: 1rem;
+    --region-font-size: calc(1rem * 2 / 3);
+    --subregion-font-size: calc(var(--region-font-size) * 0.85);
+    --country-font-size: calc(var(--region-font-size) * 0.7);
+    --indent-padding: 10px;
+    --dropdown-max-height: 200px;
+    --clock-font-size: 0.68rem; /* Reduced font size for clock */
+    --search-bar-font-size: 0.68rem; /* Reduced font size for search bar */
+}
+
+/* Body and font setup */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    overflow-y: auto;
+}
+
+/* Main Header */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px; /* Adjusted padding for cleaner layout */
+    position: fixed;
+    top: 0;
+    left: 0; /* Align header from the left */
+    width: 100%; /* Adjust width to fill the screen */
+    z-index: 1500;
+    box-sizing: border-box;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    height: 50px; /* Fixed height for alignment */
+}
+
+/* Logo and text aligned to the left with sidebar */
+.logo-text-container {
+    display: flex;
+    align-items: center; /* Center align with other elements */
+    gap: 10px; /* Space between logo and text */
+    margin-left: 0; /* Align to the left */
+    height: 100%; /* Ensure full height to align vertically */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Prevent overflow */
+    max-width: 400px; /* Ensure it fits within the header without wrapping */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Ensure text does not wrap and is aligned next to the logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.logo-text {
+    display: inline-block; /* Ensure it stays on the same line */
+    white-space: nowrap; /* Prevents text from wrapping */
+    font-weight: 700;
+    font-size: 1.3rem; /* Adjust font size */
+    color: var(--header-text);
+    margin-left: 8px; /* Margin to space the text from the logo */
+}
+
+/* Geographical Regions, Blocs, and My Page centered dynamically */
+.header-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items within the available space */
+    flex-grow: 1; /* Allow dynamic adjustment */
+    gap: 15px; /* Tight spacing */
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0 auto; /* Center the menu */
+    position: relative;
+    height: 100%; /* Ensure it aligns properly */
+}
+
+/* Clock and Search Bar */
+.clock-search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push it to the right */
+}
+
+.clock-search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between clock and search bar */
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    font-size: var(--clock-font-size); /* Reduced font size */
+    color: var(--header-text);
+    white-space: nowrap;
+    font-family: 'Courier New', monospace;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 3px 7px; /* Slightly reduced padding */
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    color: var(--text-color);
+    background-color: var(--header-bg);
+    font-size: var(--search-bar-font-size); /* Further reduced font size */
+    height: 24px; /* Reduced height */
+    width: 150px; /* Reduced width */
+    box-sizing: border-box;
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar .search-button {
+    padding: 3px; /* Slightly reduced padding */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px; /* Match input height */
+    width: 24px; /* Match input height */
+    margin-left: -4px; /* Adjusted margin */
+    box-sizing: content-box;
+}
+
+.search-bar .search-button svg {
+    fill: var(--text-color);
+    width: 10px; /* Reduced size */
+    height: 10px; /* Reduced size */
+}
+
+/* Dropdowns and My Page aligned on the same line with dividers */
+.dropdown-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Consistent gap */
+}
+
+.dropdown-button,
+.mypage-button {
+    font-size: var(--region-font-size);
+    color: var(--header-text);
+    cursor: pointer;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: var(--dropdown-bg);
+    color: var(--dropdown-text-color);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    list-style: none; /* Remove bullet points */
+    margin-top: 5px;
+    padding-left: var(--indent-padding);
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    height: 0;
+    overflow: visible;
+    visibility: hidden;
+    max-height: var(--dropdown-max-height);
+    overflow-y: auto;
+    z-index: 2500; /* High enough to ensure dropdowns are above other elements */
+}
+
+.dropdown:hover .dropdown-list {
+    display: block;
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+}
+
+/* Remove bullet points and maintain indentation */
+.dropdown-list, .subregion-list, .country-list {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: var(--indent-padding); /* Maintain indentation */
+    margin: 0; /* Remove default margin */
+}
+
+/* Further nesting maintains indentation without bullets */
+.subregion-list > li, .country-list > li {
+    padding-left: var(--indent-padding); /* Indentation for sub-lists */
+    margin: 0; /* Remove default margin */
+}
+
+/* Remove underline from country links */
+.country-list li a {
+    text-decoration: none; /* Remove underline */
+    color: var(--dropdown-text-color);
+}
+
+/* Sidebar positioning and expansion */
+.sidebar {
+    position: fixed;
+    top: 50px; /* Aligning with main content start; matches site-content margin-top */
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100% - 50px); /* Adjusted to fit within the page, minus the header height */
+    background: var(--sidebar-bg);
+    padding-top: 10px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+
+/* Ensure sidebar items fully expand */
+.Menulist li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 40px;
+    transition: width 0.7s ease-out;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: var(--bg);
+    position: relative;
+    z-index: 3002;
+}
+
+.Menulist li:hover {
+    width: 180px;
+    z-index: 4000;
+}
+
+.Menulist li.expanded {
+    overflow: visible;
+}
+
+.Menulist li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.menu-icon {
+    fill: #fff;
+    height: 40%;
+    width: 40%;
+}
+
+.text {
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s;
+    margin-left: 10px;
+    color: #fff;
+    visibility: hidden;
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+.Menulist li.expanded .text,
+.Menulist li:hover .text {
+    opacity: 1;
+    visibility: visible;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Ensure news container does not obscure sidebar items */
+.site-content {
+    flex: 1;
+    margin-top: 50px; /* Adjusted to accommodate compact header */
+    padding: 20px;
+    background-color: var(--header-bg);
+    margin-left: var(--sidebar-width);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    z-index: 1000;
+}
+
+.news-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 20px;
+    z-index: 1000;
+}
+
+.card {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #2C3E50;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #34495E;
+}
+
+.card p {
+    margin-bottom: 0;
+    color: #2C3E50;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center; /* Adjust for smaller screens */
+    }
+
+    .sidebar {
+        width: 130px;
+    }
+
+    .Menulist li:hover {
+        width: 130px;
+    }
+
+    .main-header {
+        width: 100%;
+        left: 0;
+    }
+
+    .site-content {
+        margin-left: 130px;
+    }
+}
