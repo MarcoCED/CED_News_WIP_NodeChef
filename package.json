@@ -4,7 +4,7 @@
   "description": "This project was exported from CodePen to GitHub for deployment to NodeChef. It contains news feeds for different economic indicators such as inflation, labor market, etc.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.mjs", // Change to server.mjs if that's your main file
+    "start": "node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
