@@ -1,0 +1,111 @@
+/* Import the Roboto Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* General container styling */
+.news-item {
+    margin-bottom: 1px;
+    position: relative;
+    padding: 0;
+    overflow: visible; /* Ensure hover content is not cut off */
+}
+
+/* Headline styling */
+.news-item h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    line-height: 1.1;
+    letter-spacing: -1.75px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Date styling */
+.news-item h3 .date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: inherit;
+    color: inherit;
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    letter-spacing: -1.75px;
+}
+
+/* CPI and PPI specific headline styling (bold, uppercase, red) */
+.news-item-title.inflation-headline {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: -1.75px;
+}
+
+/* ATL Fed-specific styling */
+.atl-fed-box {
+    display: inline-block;
+    background-color: #004B87; /* Blue color from the Atlanta Fed tab icon */
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-left: 8px;
+}
+
+/* Hide paragraphs initially */
+.news-item p {
+    display: none;
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Text box styling */
+.news-item .news-content {
+    background-color: #2f4f6f;
+    padding: 10px;
+    border-left: 4px solid #ffc107;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    left: 150px; /* Keep offset for the text box */
+    top: 0; /* Position next to the headline */
+    width: 750px; /* Fixed width */
+    z-index: 10; /* Ensure the text box stays above other elements */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent interaction until hovered */
+}
+
+/* Hover over the news-item container, and keep the text box open */
+.news-item:hover .news-content,
+.news-item .news-content:hover {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction */
+    display: block;
+}
+
+/* Read More link styling */
+.news-content a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust spacing and responsiveness */
+.news-item-title {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95em;
+    text-transform: capitalize;
+    letter-spacing: -1.75px;
+    margin-bottom: 1px; /* Keep headlines close together */
+}

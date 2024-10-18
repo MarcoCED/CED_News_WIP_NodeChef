@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul class="Menulist">
+            <li style="--bg:#ffa117;" class="active">
+                <a href="index.html">
+                    <div class="icon">
+                        <img src="icons/home.svg" alt="Home" class="menu-icon">
+                    </div>
+                    <div class="text">Home</div>
+                </a>
+            </li>
+            <li style="--bg:#0fc70f;">
+                <a href="chart.html">
+                    <div class="icon">
+                        <img src="icons/chart.svg" alt="Chart" class="menu-icon">
+                    </div>
+                    <div class="text">Chart</div>
+                </a>
+            </li>
+            <li style="--bg:#f44336;">
+                <a href="calendar.html">
+                    <div class="icon">
+                        <img src="icons/calendar.svg" alt="Calendar" class="menu-icon">
+                    </div>
+                    <div class="text">Calendar</div>
+                </a>
+            </li>
+            <li style="--bg:#b145e9;">
+                <a href="glossary.html">
+                    <div class="icon">
+                        <img src="icons/glossary.svg" alt="Glossary" class="menu-icon">
+                    </div>
+                    <div class="text">Glossary</div>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <!-- Logo and Text aligned to the left -->
+        <div class="logo-text-container">
+            <div class="logo-container">
+                <svg id="text" width="44.2911" height="45.6148" viewBox="-5 -5 80.303 82.404" xmlns="http://www.w3.org/2000/svg">
+                    <g id="svgGroup" stroke-linecap="round" fill-rule="nonzero" font-size="9pt" stroke="#67809F" stroke-width="0.25mm" fill="#67809F">
+                        <rect id="bar1" x="12" y="13" width="45" height="12" fill="red" rx="3" ry="3" />
+                        <rect id="bar2" x="12" y="30" width="27.5" height="14" fill="gold" rx="3" ry="3"/>
+                        <rect id="bar3" x="12" y="49" width="37.5" height="12" fill="green" rx="3" ry="3"/>
+                    </g>        
+                </svg>
+                <div class="logo-text">Chart Economy Main News Page</div>
+            </div>
+        </div>
+
+        <!-- Geographical Regions, Blocs, and My Page -->
+        <div class="header-menu-container">
+            <div class="dropdown-menu-container">
+                <div class="dropdown">
+                    <span class="dropdown-button">Geographical Regions</span>
+                    <ul class="dropdown-list">
+                        <!-- Americas -->
+                        <li class="region">
+                            <span class="toggle">Americas</span>
+                            <ul class="subregion-list">
+                                <li class="subregion">
+                                    <span class="toggle">North America</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/us.html"><img src="https://flagcdn.com/w20/us.png" alt="United States" class="flag-icon"> United States</a></li>
+                                        <li><a href="pages/canada.html"><img src="https://flagcdn.com/w20/ca.png" alt="Canada" class="flag-icon"> Canada</a></li>
+                                        <li><a href="pages/mexico.html"><img src="https://flagcdn.com/w20/mx.png" alt="Mexico" class="flag-icon"> Mexico</a></li>
+                                    </ul>
+                                </li>
+                                <li class="subregion">
+                                    <span class="toggle">Latin America</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/brazil.html"><img src="https://flagcdn.com/w20/br.png" alt="Brazil" class="flag-icon"> Brazil</a></li>
+                                        <li><a href="pages/argentina.html"><img src="https://flagcdn.com/w20/ar.png" alt="Argentina" class="flag-icon"> Argentina</a></li>
+                                        <li><a href="pages/chile.html"><img src="https://flagcdn.com/w20/cl.png" alt="Chile" class="flag-icon"> Chile</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Asia -->
+                        <li class="region">
+                            <span class="toggle">Asia</span>
+                            <ul class="subregion-list">
+                                <li class="subregion">
+                                    <span class="toggle">East Asia</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/china.html"><img src="https://flagcdn.com/w20/cn.png" alt="China" class="flag-icon"> China</a></li>
+                                        <li><a href="pages/japan.html"><img src="https://flagcdn.com/w20/jp.png" alt="Japan" class="flag-icon"> Japan</a></li>
+                                        <li><a href="pages/southkorea.html"><img src="https://flagcdn.com/w20/kr.png" alt="South Korea" class="flag-icon"> South Korea</a></li>
+                                    </ul>
+                                </li>
+                                <li class="subregion">
+                                    <span class="toggle">South Asia</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/india.html"><img src="https://flagcdn.com/w20/in.png" alt="India" class="flag-icon"> India</a></li>
+                                        <li><a href="pages/pakistan.html"><img src="https://flagcdn.com/w20/pk.png" alt="Pakistan" class="flag-icon"> Pakistan</a></li>
+                                        <li><a href="pages/bangladesh.html"><img src="https://flagcdn.com/w20/bd.png" alt="Bangladesh" class="flag-icon"> Bangladesh</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Europe -->
+                        <li class="region">
+                            <span class="toggle">Europe</span>
+                            <ul class="subregion-list">
+                                <li class="subregion">
+                                    <span class="toggle">Eastern Europe</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/russia.html"><img src="https://flagcdn.com/w20/ru.png" alt="Russia" class="flag-icon"> Russia</a></li>
+                                        <li><a href="pages/poland.html"><img src="https://flagcdn.com/w20/pl.png" alt="Poland" class="flag-icon"> Poland</a></li>
+                                        <li><a href="pages/hungary.html"><img src="https://flagcdn.com/w20/hu.png" alt="Hungary" class="flag-icon"> Hungary</a></li>
+                                    </ul>
+                                </li>
+                                <li class="subregion">
+                                    <span class="toggle">Scandinavia</span>
+                                    <ul class="country-list">
+                                        <li><a href="pages/sweden.html"><img src="https://flagcdn.com/w20/se.png" alt="Sweden" class="flag-icon"> Sweden</a></li>
+                                        <li><a href="pages/norway.html"><img src="https://flagcdn.com/w20/no.png" alt="Norway" class="flag-icon"> Norway</a></li>
+                                        <li><a href="pages/denmark.html"><img src="https://flagcdn.com/w20/dk.png" alt="Denmark" class="flag-icon"> Denmark</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- ANZ -->
+                        <li class="region">
+                            <span class="toggle">ANZ</span>
+                            <ul class="country-list">
+                                <li><a href="pages/australia.html"><img src="https://flagcdn.com/w20/au.png" alt="Australia" class="flag-icon"> Australia</a></li>
+                                <li><a href="pages/newzealand.html"><img src="https://flagcdn.com/w20/nz.png" alt="New Zealand" class="flag-icon"> New Zealand</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <span class="dropdown-button">Blocs</span>
+                    <ul class="dropdown-list">
+                        <li class="region">
+                            <span class="toggle">G7</span>
+                            <ul class="country-list">
+                                <li><a href="pages/us.html"><img src="https://flagcdn.com/w20/us.png" alt="United States" class="flag-icon"> United States</a></li>
+                                <li><a href="pages/japan.html"><img src="https://flagcdn.com/w20/jp.png" alt="Japan" class="flag-icon"> Japan</a></li>
+                                <li><a href="pages/canada.html"><img src="https://flagcdn.com/w20/ca.png" alt="Canada" class="flag-icon"> Canada</a></li>
+                                <li><a href="pages/germany.html"><img src="https://flagcdn.com/w20/de.png" alt="Germany" class="flag-icon"> Germany</a></li>
+                                <li><a href="pages/uk.html"><img src="https://flagcdn.com/w20/gb.png" alt="United Kingdom" class="flag-icon"> United Kingdom</a></li>
+                                <li><a href="pages/france.html"><img src="https://flagcdn.com/w20/fr.png" alt="France" class="flag-icon"> France</a></li>
+                                <li><a href="pages/italy.html"><img src="https://flagcdn.com/w20/it.png" alt="Italy" class="flag-icon"> Italy</a></li>
+                            </ul>
+                        </li>
+                        <li class="region">
+                            <span class="toggle">NAFTA</span>
+                            <ul class="country-list">
+                                <li><a href="pages/us.html"><img src="https://flagcdn.com/w20/us.png" alt="United States" class="flag-icon"> United States</a></li>
+                                <li><a href="pages/mexico.html"><img src="https://flagcdn.com/w20/mx.png" alt="Mexico" class="flag-icon"> Mexico</a></li>
+                                <li><a href="pages/canada.html"><img src="https://flagcdn.com/w20/ca.png" alt="Canada" class="flag-icon"> Canada</a></li>
+                            </ul>
+                        </li>
+                        <li class="region">
+                            <span class="toggle">BRICS</span>
+                            <ul class="country-list">
+                                <li><a href="pages/brazil.html"><img src="https://flagcdn.com/w20/br.png" alt="Brazil" class="flag-icon"> Brazil</a></li>
+                                <li><a href="pages/russia.html"><img src="https://flagcdn.com/w20/ru.png" alt="Russia" class="flag-icon"> Russia</a></li>
+                                <li><a href="pages/india.html"><img src="https://flagcdn.com/w20/in.png" alt="India" class="flag-icon"> India</a></li>
+                                <li><a href="pages/china.html"><img src="https://flagcdn.com/w20/cn.png" alt="China" class="flag-icon"> China</a></li>
+                                <li><a href="pages/southafrica.html"><img src="https://flagcdn.com/w20/za.png" alt="South Africa" class="flag-icon"> South Africa</a></li>
+                            </ul>
+                        </li>
+                        <li class="region">
+                            <span class="toggle">Eurozone</span>
+                            <ul class="country-list">
+                                <li><a href="pages/eurozone.html"><img src="https://flagcdn.com/w20/eu.png" alt="Eurozone" class="flag-icon"> Eurozone</a></li>
+                                <li><a href="pages/germany.html"><img src="https://flagcdn.com/w20/de.png" alt="Germany" class="flag-icon"> Germany</a></li>
+                                <li><a href="pages/france.html"><img src="https://flagcdn.com/w20/fr.png" alt="France" class="flag-icon"> France</a></li>
+                                <li><a href="pages/italy.html"><img src="https://flagcdn.com/w20/it.png" alt="Italy" class="flag-icon"> Italy</a></li>
+                                <li><a href="pages/spain.html"><img src="https://flagcdn.com/w20/es.png" alt="Spain" class="flag-icon"> Spain</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mypage">
+                    <span class="mypage-button" onclick="location.href='mypage.html';">My Page</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clock and Search Bar -->
+        <div class="clock-search-container">
+            <div class="clock-search-wrapper">
+                <div class="clock-container">
+                    <img id="user-location-flag" src="" alt="Flag" class="flag-icon">
+                    <span id="clock"></span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001a1 1 0 0 0 .195.195l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.195-.195zm-5.442-3.34a5 5 0 1 1 0-7.071 5 5 0 0 1 0 7.07z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="site-content" id="main">
+        <!-- News Container -->
+        <section class="news-container">
+            <div class="card">
+                <h3>Economics</h3>
+                <p>Carsten is a flaming asshole.</p>
+            </div>
+            <div class="card">
+                <h3>Central Banks</h3>
+                <p>Bob Shrunkle has a carbuncle.</p>
+            </div>
+            <div class="card">
+                <h3>Markets</h3>
+                <p>Yeaaaah. Peter....I'm gonna need you to come in this weekend.</p>
+            </div>
+            <div class="card">
+                <h3>Commodities</h3>
+                <p>Pork bellies Mortimer. I knew it.</p>
+            </div>
+            <div class="card">
+                <h3>Politics</h3>
+                <p>Never ask how sausages and laws are made.</p>
+            </div>
+            <div class="card">
+                <h3>Research</h3>
+                <p>Economics. The science of explaining tomorrow why the predictions you made yesterday didn't come true today.</p>
+            </div>
+            <div class="card">
+                <h3>Videos</h3>
+                <p>Video killed the radio star.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer inclusion -->
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

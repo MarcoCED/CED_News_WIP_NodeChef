@@ -1,0 +1,75 @@
+/* Import the Roboto Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* General container styling */
+.news-item {
+    margin-bottom: 1px;
+    position: relative;
+    padding: 0;
+    overflow: visible;
+}
+
+/* Headline styling */
+.news-item h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+    line-height: 1.1;
+    letter-spacing: -1.75px;
+}
+
+.fomc-statement {
+    font-weight: bold;
+    color: red;
+    text-transform: uppercase;
+}
+
+
+/* Date styling */
+.news-item h3 .date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: inherit;
+    color: inherit;
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    letter-spacing: -1.75px;
+}
+
+/* Text box styling */
+.news-item .news-content {
+    background-color: #2f4f6f;
+    padding: 10px;
+    border-left: 4px solid #ffc107;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    width: 750px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    color: white; /* Match font color from research page */
+}
+
+/* Hover over the news-item container, and keep the text box open */
+.news-item:hover .news-content,
+.news-item .news-content:hover {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+}
+
+/* Read More link styling */
+.news-content a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
