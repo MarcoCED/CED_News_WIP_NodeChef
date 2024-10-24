@@ -5,7 +5,8 @@ import path from 'path';
 import { JSDOM } from 'jsdom';  // Import jsdom to parse HTML
 
 const app = express();
-const port = process.env.PORT || 3000;  // Use NodeChef's port or fallback to 3000
+const port = 80;  // Hardcode port 80 temporarily
+
 
 app.use(cors());
 
