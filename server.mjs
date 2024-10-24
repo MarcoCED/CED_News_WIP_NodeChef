@@ -7,16 +7,10 @@ import { JSDOM } from 'jsdom';  // Import jsdom to parse HTML
 const app = express();
 const port = process.env.PORT || 3000;  // Fallback to 3000 for local development
 
-
-
-app.use(cors());
+app.use(cors());  // This is correct and necessary
 
 // Serve static files from the 'newsfeeds' folder
 app.use('/newsfeeds', express.static(path.join(process.cwd(), 'newsfeeds')));
-
-app.get('/test', (req, res) => {
-    res.send('Test route is working!');
-});
 
 
 //*****************************LABOR MARKET FEEDS******************************
@@ -368,6 +362,11 @@ app.get('/dallas-fed-speeches-feed', async (req, res) => {
     }
 });
 
+
+// Test route
+app.get('/test', (req, res) => {
+    res.send('Test route is working!');
+});
 
 // Start the server
 app.listen(port, '0.0.0.0', () => {
