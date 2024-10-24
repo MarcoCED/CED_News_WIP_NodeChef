@@ -5,7 +5,8 @@ import path from 'path';
 import { JSDOM } from 'jsdom';  // Import jsdom to parse HTML
 
 const app = express();
-const port = 3000;
+//const port = 3000;
+const port = process.env.PORT || 3000;  // Use NodeChef's port or fallback to 3000
 
 app.use(cors());
 
@@ -96,6 +97,18 @@ app.get('/weekly-earnings-feed', async (req, res) => {
     } catch (error) {
         console.error('Error fetching Weekly Earnings feed:', error);
         res.status(500).send('Error fetching the Weekly Earnings feed');
+    }
+});
+
+// Fetch and serve the DOL RSS feed
+app.get('/dol-feed', async (req, res) => {
+    try {
+        const response = await fetch('https://www.dol.gov/rss/releases.xml');
+        const data = await response.text();
+        res.send(data);
+    } catch (error) {
+        console.error('Error fetching DOL feed:', error);
+        res.status(500).send('Error fetching the DOL feed');
     }
 });
 
