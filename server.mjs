@@ -2,18 +2,22 @@ import express from 'express';
 import cors from 'cors';
 import fetch from 'node-fetch';
 import path from 'path';
-import { JSDOM } from 'jsdom';  // Import jsdom to parse HTML
+import { JSDOM } from 'jsdom';
 
 const app = express();
-const port = process.env.PORT || 3000;  // Fallback to 3000 for local development
 
-app.use(cors());  // This is correct and necessary
+app.use(cors());
 
-// Serve static files from the 'newsfeeds' folder
-app.use('/newsfeeds', express.static(path.join(process.cwd(), 'newsfeeds')));
+// Serve static files from the root directory
+app.use(express.static(path.join(process.cwd())));
 
-
+// Route to serve index.html from the root directory
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'index.html'));
+});
 //*****************************LABOR MARKET FEEDS******************************
+
+
 
 app.get('/empsit-feed', async (req, res) => {
     try {
@@ -312,6 +316,22 @@ app.get('/feds-working-papers-feed', async (req, res) => {
     }
 });
 
+// Proxy for Conference Board Press Feed
+app.get('/conference-board-feed', async (req, res) => {
+    try {
+        const response = await fetch('https://www.conference-board.org/rss/rss.cfm?type=press');
+        const data = await response.text();
+        res.set('Content-Type', 'application/rss+xml');
+        res.send(data);
+    } catch (error) {
+        console.error('Error fetching Conference Board feed:', error);
+        res.status(500).send('Error fetching the Conference Board feed');
+    }
+});
+
+
+
+
 /****************************** Fed Speeches *********************************/
 
 // Proxy for Boston Fed Speeches feed
@@ -362,13 +382,14 @@ app.get('/dallas-fed-speeches-feed', async (req, res) => {
     }
 });
 
-
-// Test route
-app.get('/test', (req, res) => {
-    res.send('Test route is working!');
+// Last route handler (e.g., health check)
+app.get('/health', (req, res) => {
+    res.send('Server is running!');
 });
 
-// Start the server
+
+const port = process.env.PORT || 80;
 app.listen(port, '0.0.0.0', () => {
-     console.log(`Server running at port ${port}`);  // This logs the actual port being used
+    console.log(`Server running on port ${port}`);
 });
+
